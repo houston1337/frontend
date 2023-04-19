@@ -1,7 +1,7 @@
 import './App.css';
 import { Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar/Navbar';
-import Joystick from './components/Joystick/Joystick';
+import Scanning from "./components/Scanning/Scanning";
 
 function App(props) {
   return (
@@ -9,7 +9,7 @@ function App(props) {
       <Navbar />
       <Routes>
         <Route path="/" element="Hello world" />
-        <Route path="/scanning" element={<Joystick />} />
+        <Route path="/scanning" element={<Scanning />} />
       </Routes>
     </>
   );

@@ -1,17 +1,14 @@
-import React from "react";
-import Canvas from "../Canvas/Canvas";
-import Joystick from "../Joystick/Joystick";
-import {Col, Row} from 'antd';
+import React from 'react';
+import Canvas from '../Canvas/Canvas';
+import Joystick from '../Joystick/Joystick';
 
-const Scanning = () => {
-    return(
-        <>
-            <Row>
-                <Col><Canvas/></Col>
-                <Col><Joystick/></Col>
-            </Row>
-        </>
-    )
+function Scanning() {
+  return (
+    <div style={{ display: 'flex', flexDirection: 'row' }}>
+      <Canvas />
+      <Joystick />
+    </div>
+  );
 }
 
 export default Scanning;

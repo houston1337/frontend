@@ -13,7 +13,7 @@ const test = 8;
 
 function Joystick() {
   return (
-    <Layout>
+    <Layout style={{flex: 1}}>
       <Content style={{
         justifyContent: 'center',
         alignItems: 'center',
