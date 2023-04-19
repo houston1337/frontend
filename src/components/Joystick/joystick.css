@@ -1,0 +1,14 @@
+.customColumn {
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.customButton {
+    display: flex;
+    min-height: 90px;
+    width: 90px;
+    justify-content: center;
+    align-items: center;
+}

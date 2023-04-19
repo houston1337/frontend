@@ -1,51 +1,66 @@
-import React, {useState} from 'react';
-import {Button, Space, Col, Row, Layout} from 'antd';
-import {ArrowUpOutlined, ArrowLeftOutlined, ArrowRightOutlined, ArrowDownOutlined} from '@ant-design/icons';
-import {Content} from "antd/es/layout/layout";
+import React from 'react';
+import {
+  Button, Col, Row, Layout,
+} from 'antd';
+import {
+  ArrowUpOutlined, ArrowLeftOutlined, ArrowRightOutlined, ArrowDownOutlined,
+} from '@ant-design/icons';
+import { Content } from 'antd/es/layout/layout';
+import './joystick.css';
 
-const Joystick = () => {
-    const [size, setSize] = useState('large');
-    return (
-        <Layout>
-            <Content style={{
-                justifyContent: "center", alignItems: "center", margin: "100px",
-                width: "100%", height: "100%"
-            }}>
-                <div>
-                    <Row gutter={[48, 32]}>
-                        <Col><Button size={size}><ArrowUpOutlined rotate={-45}/></Button></Col>
-                        <Col offset={1}><Button size={size}><ArrowUpOutlined/></Button></Col>
-                        <Col offset={1}><Button size={size}><ArrowUpOutlined rotate={45}/></Button></Col>
-                    </Row>
+const sizeButton = 'large';
+const test = 8;
 
-                    <Row gutter={[48, 32]}>
-                        <Col>
-                            <Button size={size}><ArrowLeftOutlined/></Button>
-                        </Col>
-                        <Col offset={1}>
-                            <Button size={size} type="hidden" disabled={true}>
-                                <ArrowRightOutlined style={{fontSize: '16px', color: "transparent"}}/>
-                            </Button>
-                        </Col>
-                        <Col offset={1}>
-                            <Button size={size}><ArrowRightOutlined/></Button>
-                        </Col>
-                    </Row>
+function Joystick() {
+  return (
+    <Layout>
+      <Content style={{
+        justifyContent: 'center',
+        alignItems: 'center',
+        margin: '100px',
+        height: '100%',
+        display: 'flex',
+        flexDirection: 'column',
+      }}
+      >
+        <Row gutter={[40, 60]}>
+          <Col span={test} className="customColumn">
+            <Button size={sizeButton} className="customButton"><ArrowUpOutlined rotate={-45} /></Button>
+          </Col>
+          <Col span={test} className="customColumn">
+            <Button size={sizeButton} className="customButton"><ArrowUpOutlined /></Button>
+          </Col>
+          <Col span={test} className="customColumn">
+            <Button size={sizeButton} className="customButton"><ArrowUpOutlined rotate={45} /></Button>
+          </Col>
 
-                    <Row gutter={[48, 32]}>
-                        <Col><Button size={size}><ArrowDownOutlined rotate={45}/></Button></Col>
-                        <Col offset={1}><Button size={size}><ArrowDownOutlined/></Button></Col>
-                        <Col offset={1}><Button size={size}><ArrowDownOutlined rotate={-45}/></Button></Col>
-                    </Row>
+          <Col span={test} className="customColumn">
+            <Button size={sizeButton} className="customButton"><ArrowLeftOutlined /></Button>
+          </Col>
+          <Col span={test} className="customColumn">
+            <Button size={sizeButton} type="hidden" disabled>
+              <ArrowRightOutlined style={{ fontSize: '16px', color: 'transparent' }} />
+            </Button>
+          </Col>
+          <Col span={test} className="customColumn">
+            <Button size={sizeButton} className="customButton"><ArrowRightOutlined /></Button>
+          </Col>
 
-                    <Row>
-                        <Col>
-                            <Button size={size} type="primary" danger>STOP</Button>
-                        </Col>
-                    </Row>
-                </div>
-            </Content>
-        </Layout>
-    );
+          <Col span={test} className="customColumn">
+            <Button size={sizeButton} className="customButton"><ArrowDownOutlined rotate={45} /></Button>
+          </Col>
+          <Col span={test} className="customColumn">
+            <Button size={sizeButton} className="customButton"><ArrowDownOutlined /></Button>
+          </Col>
+          <Col span={test} className="customColumn">
+            <Button size={sizeButton} className="customButton"><ArrowDownOutlined rotate={-45} /></Button>
+          </Col>
+        </Row>
+        <div style={{ marginTop: '100px' }}>
+          <Button size={sizeButton} type="primary" danger>STOP</Button>
+        </div>
+      </Content>
+    </Layout>
+  );
 }
 export default Joystick;
